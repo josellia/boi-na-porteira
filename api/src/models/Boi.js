@@ -16,7 +16,7 @@ const BoiSchema = new mongoose.Schema(
     },
 
     gender: {
-      type: String,
+      type: Number,
       required: true,
     },
     weight: {

@@ -1,10 +1,17 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { addCBoiApi } from "../../store/apiActions";
 
 import { addMessage } from "../../store/ducks/Layout";
 
 const Add = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   const [name, setName] = useState("");
   const [file, setFile] = useState("");
   const [age, setAge] = useState("");
@@ -36,7 +43,7 @@ const Add = () => {
       }
     }
   };
-  const handleSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
 
     dispatch(addCBoiApi(name, file, age, gender, weight));
@@ -44,10 +51,10 @@ const Add = () => {
     dispatch(addMessage("Cadastrado com sucesso"));
   };
   return (
-    <form className="container mt-5 " onSubmit={handleSubmit}>
+    <form className="container mt-5 " onSubmit={handleSubmit(onSubmit)}>
       <div className="row">
         <div className="form-group col-md-4">
-          <label>Raça</label>
+          <label htmlFor="name">Raça</label>
           <input
             type="text"
             name="name"
@@ -57,12 +64,16 @@ const Add = () => {
               const { value } = e.target;
               setName(value);
             }}
+            {...register("name", { required: true })}
           />
+          {errors.name?.type === "required" && (
+            <p className="text-danger">O campo é raça obrigatório</p>
+          )}
         </div>
         <div className="form-group col-md-3">
           <label>Idade em meses</label>
           <input
-            type="string"
+            type="number"
             name="age"
             className="form-control"
             placeholder="Idade do animal"
@@ -70,7 +81,18 @@ const Add = () => {
               const { value } = e.target;
               setAge(value);
             }}
+            // ref={register({
+            //   validate: {
+            //     positiveNumber: (value) => {
+            //       console.log("PoisitiveNumber check");
+            //       return parseFloat(value) > 0;
+            //     },
+            //   },
+            // })}
           />
+          {/* {errors.age && errors.age.type === "positiveNumber" && (
+            <p className="text-danger">A idade é inválida</p>
+          )} */}
         </div>
         <div className="form-group col-md-1">
           <label>Peso (kg)</label>

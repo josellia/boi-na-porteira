@@ -46,3 +46,5 @@ router.get("/bois", async (req, res) => {
 module.exports = router;
 
 // https://www.youtube.com/watch?v=lYUsMvZw6s4
+
+//Validação pra fazer - https://stackabuse.com/form-data-validation-in-nodejs-with-express-validator/
