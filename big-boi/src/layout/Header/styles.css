@@ -1,0 +1,19 @@
+.bg-header {
+  border-bottom: 2px solid #198754;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.icon-header {
+  color: #198754;
+  position: relative;
+  margin-right: 1rem;
+}
+
+span.fa-counter {
+  position: absolute;
+  color: #fff;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
