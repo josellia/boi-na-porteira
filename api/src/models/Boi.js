@@ -9,14 +9,14 @@ const BoiSchema = new mongoose.Schema(
       max: 255,
     },
     age: {
-      type: String,
+      type: Number,
       required: true,
       min: 0,
       max: 100,
     },
 
     gender: {
-      type: Number,
+      type: String,
       required: true,
     },
     weight: {

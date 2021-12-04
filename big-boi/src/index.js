@@ -15,5 +15,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-
-// ESTUDAR ISSO:https://thiagolima.blog.br/parte-5-pagina%C3%A7%C3%A3o-ordena%C3%A7%C3%A3o-e-filtros-em-apis-restful-3045d88b4114
