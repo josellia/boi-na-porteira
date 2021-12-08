@@ -16,7 +16,7 @@ router.post(
   ],
   async (req, res) => {
     const { file, body } = req;
-    console.log(body);
+
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {

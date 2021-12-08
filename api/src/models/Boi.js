@@ -10,7 +10,7 @@ const BoiSchema = new mongoose.Schema(
     },
     age: {
       type: Number,
-      required: true,
+      required: false,
       min: 0,
       max: 100,
     },
@@ -35,5 +35,3 @@ const BoiSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model("Boi", BoiSchema);
-
-// https://www.luiztools.com.br/post/tutorial-de-validacao-de-input-de-dados-em-node-js/

@@ -38,23 +38,10 @@ const Add = () => {
     }
   };
   const formSubmit = () => {
-    // if (errors) {
-    //   return;
-    // }
     dispatch(addCBoiApi(name, file, age, gender, weight));
-    // reset();
 
     dispatch(addMessage("Cadastrado com sucesso"));
   };
-
-  // const erros = {};
-  // const validate = (values) => {
-  //   if (!values?.name) {
-  //     erros.name = "Required";
-  //     console.log("FUNFA IN HERE", errors);
-  //   }
-
-  // };
 
   return (
     <form className="container mt-5 " onSubmit={formSubmit}>
@@ -72,13 +59,7 @@ const Add = () => {
               const { value } = e.target;
               setName(value);
             }}
-            // {...register("name", {
-            //   required: true,
-            // })}
           />
-          {/* {errors.name?.type === "required" && (
-            <p className="text-danger">O campo é raça obrigatório</p>
-          )} */}
         </div>
         <div className="form-group col-md-3">
           <label>
@@ -93,18 +74,7 @@ const Add = () => {
               const { value } = e.target;
               setAge(value);
             }}
-            // {...register({
-            //   validate: {
-            //     positiveNumber: (value) => {
-            //       console.log("PoisitiveNumber check");
-            //       return parseFloat(value) > 0;
-            //     },
-            //   },
-            // })}
           />
-          {/* {errors.age && errors.age.type === "positiveNumber" && (
-            <p className="text-danger">A idade é inválida</p>
-          )} */}
         </div>
         <div className="form-group col-md-2">
           <label>

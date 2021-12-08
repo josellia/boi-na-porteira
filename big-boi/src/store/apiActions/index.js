@@ -12,13 +12,13 @@ export const getAllBois = () => {
   };
 };
 
-export const addCBoiApi = (name, url, age, gender, weight) => {
+export const addCBoiApi = (boi) => {
   const form = new FormData();
-  form.append("name", name);
-  form.append("file", url);
-  form.append("age", age);
-  form.append("gender", gender);
-  form.append("weight", weight);
+  form.append("name", boi.name);
+  form.append("file", boi.url);
+  form.append("age", boi.age);
+  form.append("gender", boi.gender);
+  form.append("weight", boi.weight);
 
   return (dispatch) => {
     api
